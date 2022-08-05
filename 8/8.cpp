@@ -16,6 +16,8 @@ int main()
     unsigned long cc;
     unsigned long long dd;
 
+    // Bool is also an integral type (1 bit)
+
     cout << "Size of char (in bytes): " << sizeof(char) << "\n";
     cout << "Size of short (in bytes): " << sizeof(short) << "\n";
     cout << "Size of int (in bytes): " << sizeof(int) << "\n";
