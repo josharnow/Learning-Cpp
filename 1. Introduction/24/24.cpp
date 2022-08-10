@@ -1,6 +1,8 @@
 #include <iostream>
+#include <string>
 using std::cout;
 using std::cin;
+using std::string;
 
 int main()
 {
@@ -18,7 +20,6 @@ int main()
     }
     cout << "factorial of " << fact << ": " << factorial << "\n";
     
-    // return 0;
     // While loop
     int j = fact - 1;
     while (j < 0)
@@ -27,13 +28,14 @@ int main()
         j++;
     }
     
-    // Do while loop
+    // Do while loop - Executes at least once
+    string password = "testpassword";
+    string guess;
     do 
     {
+        cout << "Guess the password:" << "\n";
+        cin >> guess;
+    } while (guess != password);
 
-    } while (true)
-    {
-        
-    }
-
+    return 0;
 }
