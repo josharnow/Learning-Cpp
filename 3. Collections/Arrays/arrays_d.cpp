@@ -2,31 +2,48 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
-using std::cout;
 using std::cin;
+using std::cout;
 using std::string;
+
+void print_array(int array[], int count)
+{
+    for (int i = 0; i < count; i++)
+    {
+        cout << array[i] << '\t';
+    }
+        cout << '\n';
+}
 
 void play_game()
 {
+    int guesses[250];
+    int guess_count = 0;
+
     int random = rand() % 251; // Remainder will be somewhere between 0 and 250
-    cout << random << "\n";
+    cout << random << '\n';
     cout << "Guess a number:\n";
     while (true)
     {
         int guess;
         cin >> guess;
+        guesses[guess_count++] = guess; // Increments the variable guess_count after value assignment (postfix increment operator)
+
         if (guess == random)
         {
             cout << "You win!\n";
             break;
-        } else if (guess < random)
+        }
+        else if (guess < random)
         {
             cout << "Too low\n";
-        } else 
+        }
+        else
         {
             cout << "Too high\n";
         }
     }
+    print_array(guesses, guess_count);
 }
 
 int main()
@@ -50,6 +67,4 @@ int main()
             break;
         }
     } while (choice != 0);
-    
-
 }
